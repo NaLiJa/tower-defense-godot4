@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://cwg8o1jumjeet"]
+[gd_scene format=3 uid="uid://cwg8o1jumjeet"]
 
 [ext_resource type="PackedScene" uid="uid://q3ewy63w2x0m" path="res://entities/turrets/turret.tscn" id="1_46fx6"]
 [ext_resource type="PackedScene" uid="uid://d0i8efn2ow88m" path="res://entities/projectiles/missile/homing_missile.tscn" id="3_mk2yu"]
@@ -51,7 +51,7 @@
 [ext_resource type="Texture2D" uid="uid://c6jma3iiarg4n" path="res://entities/assets/textures/missile_vfx/gun_fx_06.png" id="27_ccrje"]
 [ext_resource type="Texture2D" uid="uid://d04k16lu1laqu" path="res://entities/assets/textures/missile_vfx/gun_fx_07.png" id="28_36qse"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yx8pa"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1e3q3"]
 resource_local_to_scene = true
 size = Vector2(80, 80)
 
@@ -127,7 +127,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("26_sobf6")
 }],
-"loop": false,
+"loop": 0,
 "name": &"explode",
 "speed": 12.0
 }, {
@@ -135,7 +135,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("4_utfvp")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -164,7 +164,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("12_8qoh3")
 }],
-"loop": false,
+"loop": 0,
 "name": &"shoot_a",
 "speed": 10.0
 }, {
@@ -193,19 +193,19 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("20_cqmx5")
 }],
-"loop": false,
+"loop": 0,
 "name": &"shoot_b",
 "speed": 10.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ncayq"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_jlijf"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": null
 }],
-"loop": false,
+"loop": 0,
 "name": &"explode",
 "speed": 5.0
 }, {
@@ -213,7 +213,7 @@ animations = [{
 "duration": 1.0,
 "texture": null
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -242,7 +242,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("28_36qse")
 }],
-"loop": false,
+"loop": 0,
 "name": &"shoot_a",
 "speed": 10.0
 }, {
@@ -271,22 +271,22 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("28_36qse")
 }],
-"loop": false,
+"loop": 0,
 "name": &"shoot_b",
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_38r7f"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_kqrre"]
 radius = 1000.0
 
-[node name="MissileTurret" instance=ExtResource("1_46fx6")]
+[node name="MissileTurret" unique_id=1861635697 instance=ExtResource("1_46fx6")]
 health = 200.0
 
-[node name="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" parent="." index="1" unique_id=1712605118]
 position = Vector2(-8, 0)
-shape = SubResource("RectangleShape2D_yx8pa")
+shape = SubResource("RectangleShape2D_1e3q3")
 
-[node name="Shooter" parent="." index="3"]
+[node name="Shooter" parent="." index="3" unique_id=1495694835]
 detect_radius = 1000
 fire_rate = 5.0
 shooting_mode = 1
@@ -296,33 +296,32 @@ projectile_spread = 0.0
 projectile_speed = 400
 projectile_damage = 20
 
-[node name="Gun" parent="Shooter" index="0"]
+[node name="Gun" parent="Shooter" index="0" unique_id=216722360]
 position = Vector2(2, 0)
 sprite_frames = SubResource("SpriteFrames_pwq6h")
-frame_progress = 0.72723
+frame_progress = 0.70639664
 offset = Vector2(-2, 0)
 metadata/_edit_lock_ = true
 
-[node name="Muzzle" parent="Shooter/Gun" index="0"]
+[node name="Muzzle" parent="Shooter/Gun" index="0" unique_id=713128148]
 position = Vector2(17, -30)
 
 [node name="Muzzle2" parent="Shooter/Gun" index="1"]
 position = Vector2(17, 30)
 
-[node name="MuzzleFlash" parent="Shooter" index="1"]
+[node name="MuzzleFlash" parent="Shooter" index="1" unique_id=233061104]
 position = Vector2(19, -30)
-sprite_frames = SubResource("SpriteFrames_ncayq")
-animation = &"shoot_a"
-frame_progress = 0.0
+sprite_frames = SubResource("SpriteFrames_jlijf")
+frame_progress = 0.9791666
 offset = Vector2(12, 3)
 
-[node name="Detector" parent="Shooter" index="2"]
+[node name="Detector" parent="Shooter" index="2" unique_id=1614718735]
 collision_mask = 64
 
-[node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_38r7f")
+[node name="CollisionShape2D" parent="Shooter/Detector" index="0" unique_id=1492619427]
+shape = SubResource("CircleShape2D_kqrre")
 
-[node name="LookAhead" parent="Shooter" index="3"]
+[node name="LookAhead" parent="Shooter" index="3" unique_id=744972255]
 target_position = Vector2(1050, 0)
 collision_mask = 64
 

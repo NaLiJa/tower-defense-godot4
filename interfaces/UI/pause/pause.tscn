@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dln6ttdt8iopd"]
+[gd_scene format=3 uid="uid://dln6ttdt8iopd"]
 
 [ext_resource type="Theme" uid="uid://cgfdgl4ihd081" path="res://assets/themes/td_theme.tres" id="1_ax0fs"]
-[ext_resource type="Script" path="res://interfaces/UI/pause/pause.gd" id="2_aeffn"]
+[ext_resource type="Script" uid="uid://cp4t8s6eblkxw" path="res://interfaces/UI/pause/pause.gd" id="2_aeffn"]
 [ext_resource type="Texture2D" uid="uid://crhpljtoq2vwr" path="res://interfaces/UI/pause/assets/textures/pause.png" id="3_t0lgw"]
 
 [sub_resource type="Animation" id="Animation_5rfcn"]
@@ -53,87 +53,70 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fuhf4"]
 _data = {
-"RESET": SubResource("Animation_5rfcn"),
-"hide": SubResource("Animation_1drwa"),
-"show": SubResource("Animation_1g827")
+&"RESET": SubResource("Animation_5rfcn"),
+&"hide": SubResource("Animation_1drwa"),
+&"show": SubResource("Animation_1g827")
 }
 
-[node name="Pause" type="PanelContainer"]
+[node name="Pause" type="PanelContainer" unique_id=1116979746]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 265.0
-offset_top = 768.0
-offset_right = 1015.0
-offset_bottom = 1311.0
+offset_left = -375.0
+offset_top = 408.0
+offset_right = 375.0
+offset_bottom = 951.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_ax0fs")
 script = ExtResource("2_aeffn")
 
-[node name="Sections" type="VBoxContainer" parent="."]
-offset_left = 40.0
-offset_top = 40.0
-offset_right = 710.0
-offset_bottom = 503.0
+[node name="Sections" type="VBoxContainer" parent="." unique_id=996876712]
+layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Title" type="TextureRect" parent="Sections"]
-offset_top = 44.0
-offset_right = 670.0
-offset_bottom = 136.0
+[node name="Title" type="TextureRect" parent="Sections" unique_id=1327659898]
+layout_mode = 2
 size_flags_vertical = 6
 texture = ExtResource("3_t0lgw")
 stretch_mode = 5
 
-[node name="Buttons" type="VBoxContainer" parent="Sections"]
-offset_top = 211.0
-offset_right = 670.0
-offset_bottom = 443.0
+[node name="Buttons" type="VBoxContainer" parent="Sections" unique_id=1473210685]
+layout_mode = 2
 size_flags_vertical = 6
 size_flags_stretch_ratio = 1.5
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="Resume" type="Button" parent="Sections/Buttons"]
-offset_left = 221.0
-offset_right = 449.0
-offset_bottom = 64.0
+[node name="Resume" type="Button" parent="Sections/Buttons" unique_id=785858731]
+layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 size_flags_stretch_ratio = 0.25
 theme_override_font_sizes/font_size = 42
 text = " RESUME "
 
-[node name="Restart" type="Button" parent="Sections/Buttons"]
-offset_left = 211.0
-offset_top = 84.0
-offset_right = 458.0
-offset_bottom = 148.0
+[node name="Restart" type="Button" parent="Sections/Buttons" unique_id=25716966]
+layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 size_flags_stretch_ratio = 0.25
 theme_override_font_sizes/font_size = 42
 text = " RESTART "
 
-[node name="Exit" type="Button" parent="Sections/Buttons"]
-offset_left = 249.0
-offset_top = 168.0
-offset_right = 420.0
-offset_bottom = 232.0
+[node name="Exit" type="Button" parent="Sections/Buttons" unique_id=963998427]
+layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 size_flags_stretch_ratio = 0.25
 theme_override_font_sizes/font_size = 42
 text = "  EXIT  "
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "RESET"
-libraries = {
-"": SubResource("AnimationLibrary_fuhf4")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1148512116]
+libraries/ = SubResource("AnimationLibrary_fuhf4")
+autoplay = &"RESET"
 
 [connection signal="pressed" from="Sections/Buttons/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Sections/Buttons/Restart" to="." method="_on_restart_pressed"]

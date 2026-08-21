@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://0h6p5kq7bwnw"]
+[gd_scene format=3 uid="uid://0h6p5kq7bwnw"]
 
 [ext_resource type="PackedScene" uid="uid://q63lxc50ni31" path="res://entities/enemies/enemy.tscn" id="1_xcp6m"]
 [ext_resource type="Texture2D" uid="uid://c2kw4wa37hx6d" path="res://entities/enemies/infantry/assets/textures/tier2/idle_00.png" id="2_j37t7"]
@@ -21,36 +21,87 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_65d1v"]
 animations = [{
-"frames": [ExtResource("2_us1ld"), ExtResource("3_bmrip"), ExtResource("4_6ih2m"), ExtResource("5_mfdcg"), ExtResource("6_2pw3q"), ExtResource("7_nahaf"), ExtResource("8_vswck"), ExtResource("9_6jx2e")],
-"loop": false,
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_us1ld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bmrip")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6ih2m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mfdcg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2pw3q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_nahaf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vswck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_6jx2e")
+}],
+"loop": 0,
 "name": &"die",
 "speed": 12.0
 }, {
 "frames": [],
-"loop": true,
+"loop": 1,
 "name": &"hit",
 "speed": 5.0
 }, {
-"frames": [ExtResource("2_j37t7")],
-"loop": true,
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_j37t7")
+}],
+"loop": 1,
 "name": &"idle",
 "speed": 5.0
 }, {
-"frames": [ExtResource("3_x1adw"), ExtResource("4_jc6u6"), ExtResource("5_b2h8l"), ExtResource("6_4n4bj"), ExtResource("7_0id6p"), ExtResource("8_qrgjc"), ExtResource("9_251sx"), ExtResource("10_s43qq")],
-"loop": true,
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_x1adw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jc6u6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_b2h8l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4n4bj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0id6p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qrgjc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_251sx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_s43qq")
+}],
+"loop": 1,
 "name": &"move",
 "speed": 9.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_yy5b4"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_qdtps"]
 resource_local_to_scene = true
 radius = 24.0
 
-[node name="InfantryT2" instance=ExtResource("1_xcp6m")]
+[node name="InfantryT2" unique_id=740764601 instance=ExtResource("1_xcp6m")]
 speed = 150
 
-[node name="Sprite2D" parent="." index="1"]
-frames = SubResource("SpriteFrames_65d1v")
+[node name="Sprite2D" parent="." index="1" unique_id=1055406294]
+sprite_frames = SubResource("SpriteFrames_65d1v")
 
-[node name="CollisionShape2D" parent="." index="2"]
-shape = SubResource("CircleShape2D_yy5b4")
+[node name="CollisionShape2D" parent="." index="2" unique_id=331306561]
+shape = SubResource("CircleShape2D_qdtps")

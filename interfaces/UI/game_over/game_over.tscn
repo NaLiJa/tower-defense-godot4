@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://jmm71rgqfd1r"]
+[gd_scene format=3 uid="uid://jmm71rgqfd1r"]
 
 [ext_resource type="Theme" uid="uid://cgfdgl4ihd081" path="res://assets/themes/td_theme.tres" id="1_42mgb"]
-[ext_resource type="Script" path="res://interfaces/UI/game_over/game_over.gd" id="2_a4bhp"]
+[ext_resource type="Script" uid="uid://d0cosnunl6cgb" path="res://interfaces/UI/game_over/game_over.gd" id="2_a4bhp"]
 [ext_resource type="Texture2D" uid="uid://bh2j3w7sn76or" path="res://interfaces/UI/game_over/assets/textures/gameover.png" id="2_rdkds"]
 
 [sub_resource type="Animation" id="Animation_iswqo"]
@@ -157,11 +157,11 @@ tracks/5/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_svvxd"]
 _data = {
-"RESET": SubResource("Animation_iswqo"),
-"show": SubResource("Animation_0n8h5")
+&"RESET": SubResource("Animation_iswqo"),
+&"show": SubResource("Animation_0n8h5")
 }
 
-[node name="GameOver" type="PanelContainer"]
+[node name="GameOver" type="PanelContainer" unique_id=607473909]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -176,63 +176,45 @@ grow_vertical = 2
 theme = ExtResource("1_42mgb")
 script = ExtResource("2_a4bhp")
 
-[node name="Sections" type="VBoxContainer" parent="."]
+[node name="Sections" type="VBoxContainer" parent="." unique_id=1394055580]
 layout_mode = 2
-offset_left = 40.0
-offset_top = 40.0
-offset_right = 302.0
-offset_bottom = 103.0
 theme_override_constants/separation = 10
 
-[node name="Title" type="TextureRect" parent="Sections"]
+[node name="Title" type="TextureRect" parent="Sections" unique_id=1450381045]
 visible = false
 layout_mode = 2
-offset_top = 29.0
-offset_right = 780.0
-offset_bottom = 124.0
 size_flags_vertical = 6
 size_flags_stretch_ratio = 1.25
 texture = ExtResource("2_rdkds")
 stretch_mode = 5
 
-[node name="Buttons" type="HBoxContainer" parent="Sections"]
+[node name="Buttons" type="HBoxContainer" parent="Sections" unique_id=1403818661]
 visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-offset_top = 192.0
-offset_right = 780.0
-offset_bottom = 256.0
 size_flags_vertical = 6
 theme_override_constants/separation = 50
 alignment = 1
 
-[node name="Retry" type="Button" parent="Sections/Buttons"]
+[node name="Retry" type="Button" parent="Sections/Buttons" unique_id=875340336]
 layout_mode = 2
-offset_left = 184.0
-offset_right = 375.0
-offset_bottom = 64.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
 size_flags_stretch_ratio = 0.25
 theme_override_font_sizes/font_size = 42
 text = " RETRY "
 
-[node name="Exit" type="Button" parent="Sections/Buttons"]
+[node name="Exit" type="Button" parent="Sections/Buttons" unique_id=401945616]
 layout_mode = 2
-offset_left = 425.0
-offset_right = 596.0
-offset_bottom = 64.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
 size_flags_stretch_ratio = 0.25
 theme_override_font_sizes/font_size = 42
 text = "  EXIT  "
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "RESET"
-libraries = {
-"": SubResource("AnimationLibrary_svvxd")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=779093813]
+libraries/ = SubResource("AnimationLibrary_svvxd")
+autoplay = &"RESET"
 
 [connection signal="pressed" from="Sections/Buttons/Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="Sections/Buttons/Exit" to="." method="_on_exit_pressed"]

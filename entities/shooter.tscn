@@ -1,6 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://r1b440sc0tkl"]
+[gd_scene format=3 uid="uid://r1b440sc0tkl"]
 
-[ext_resource type="Script" path="res://entities/shooter.gd" id="1_iyj4l"]
+[ext_resource type="Script" uid="uid://utfyawxap17p" path="res://entities/shooter.gd" id="1_iyj4l"]
 [ext_resource type="Texture2D" uid="uid://dm7pxbc4sw21l" path="res://entities/turrets/single/assets/textures/gun_idle_00.png" id="2_31pp5"]
 [ext_resource type="Texture2D" uid="uid://djmhh26sa4xo" path="res://entities/turrets/single/assets/textures/gun_shoot_00.png" id="4_80ryh"]
 [ext_resource type="Texture2D" uid="uid://pus7ugvpejf2" path="res://entities/turrets/single/assets/textures/gun_shoot_01.png" id="5_bcu82"]
@@ -15,7 +15,7 @@
 resource_local_to_scene = true
 animations = [{
 "frames": [],
-"loop": false,
+"loop": 0,
 "name": &"explode",
 "speed": 5.0
 }, {
@@ -23,7 +23,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("2_31pp5")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -52,7 +52,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("11_ecrc2")
 }],
-"loop": false,
+"loop": 0,
 "name": &"shoot",
 "speed": 10.0
 }]
@@ -61,7 +61,7 @@ animations = [{
 resource_local_to_scene = true
 animations = [{
 "frames": [],
-"loop": false,
+"loop": 0,
 "name": &"explode",
 "speed": 5.0
 }, {
@@ -69,52 +69,53 @@ animations = [{
 "duration": 1.0,
 "texture": null
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 5.0
 }, {
 "frames": [],
-"loop": true,
+"loop": 1,
 "name": &"shoot",
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_juiex"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_f6ix3"]
 radius = 400.0
 
-[node name="Shooter" type="Node2D"]
+[node name="Shooter" type="Node2D" unique_id=2109396984]
 script = ExtResource("1_iyj4l")
 detector_color = Color(0, 0, 1, 0.490196)
 detect_radius = 400
 
-[node name="Gun" type="AnimatedSprite2D" parent="."]
+[node name="Gun" type="AnimatedSprite2D" parent="." unique_id=216722360]
 sprite_frames = SubResource("SpriteFrames_m3rfr")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.887915
+frame_progress = 0.11888328
 offset = Vector2(11, -2)
 
-[node name="Muzzle" type="Marker2D" parent="Gun"]
+[node name="Muzzle" type="Marker2D" parent="Gun" unique_id=713128148]
 position = Vector2(80, 0)
 
-[node name="MuzzleFlash" type="AnimatedSprite2D" parent="."]
+[node name="MuzzleFlash" type="AnimatedSprite2D" parent="." unique_id=233061104]
 position = Vector2(80, 0)
 sprite_frames = SubResource("SpriteFrames_0m3mx")
 animation = &"idle"
 autoplay = "idle"
+frame_progress = 0.23096834
 
-[node name="Detector" type="Area2D" parent="."]
+[node name="Detector" type="Area2D" parent="." unique_id=1614718735]
 collision_layer = 0
 monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector" unique_id=1492619427]
 modulate = Color(1, 1, 1, 0.247059)
-shape = SubResource("CircleShape2D_juiex")
+shape = SubResource("CircleShape2D_f6ix3")
 
-[node name="LookAhead" type="RayCast2D" parent="."]
+[node name="LookAhead" type="RayCast2D" parent="." unique_id=744972255]
 target_position = Vector2(450, 0)
 
-[node name="FireRateTimer" type="Timer" parent="."]
+[node name="FireRateTimer" type="Timer" parent="." unique_id=1612321423]
 one_shot = true
 
 [connection signal="animation_finished" from="Gun" to="." method="_on_gun_animation_finished"]

@@ -1,6 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://q3ewy63w2x0m"]
+[gd_scene format=3 uid="uid://q3ewy63w2x0m"]
 
-[ext_resource type="Script" path="res://entities/turrets/turret.gd" id="1_mel1h"]
+[ext_resource type="Script" uid="uid://bdi6i2a3o5hgt" path="res://entities/turrets/turret.gd" id="1_mel1h"]
 [ext_resource type="Texture2D" uid="uid://cdt1rsj4xbkq3" path="res://entities/turrets/assets/textures/base_idle_00.png" id="2_nf4vx"]
 [ext_resource type="Texture2D" uid="uid://dm7pxbc4sw21l" path="res://entities/turrets/single/assets/textures/gun_idle_00.png" id="4_o5cln"]
 [ext_resource type="PackedScene" uid="uid://r1b440sc0tkl" path="res://entities/shooter.tscn" id="4_wtpgl"]
@@ -19,11 +19,11 @@
 resource_local_to_scene = true
 size = Vector2(96, 80)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_lyc1n"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_2wlmh"]
 resource_local_to_scene = true
 animations = [{
 "frames": [],
-"loop": false,
+"loop": 0,
 "name": &"explode",
 "speed": 5.0
 }, {
@@ -31,7 +31,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("4_o5cln")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -60,16 +60,16 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("12_kj0np")
 }],
-"loop": false,
+"loop": 0,
 "name": &"shoot",
 "speed": 12.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_7qxgd"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_7fpw5"]
 resource_local_to_scene = true
 animations = [{
 "frames": [],
-"loop": false,
+"loop": 0,
 "name": &"explode",
 "speed": 5.0
 }, {
@@ -77,60 +77,60 @@ animations = [{
 "duration": 1.0,
 "texture": null
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 5.0
 }, {
 "frames": [],
-"loop": true,
+"loop": 1,
 "name": &"shoot",
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_mwix6"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_qjn2g"]
 radius = 400.0
 
-[node name="Turret" type="CharacterBody2D"]
+[node name="Turret" type="CharacterBody2D" unique_id=2120044330]
 collision_layer = 2
 collision_mask = 33
 input_pickable = true
 script = ExtResource("1_mel1h")
 metadata/_edit_group_ = true
 
-[node name="Basement" type="Sprite2D" parent="."]
+[node name="Basement" type="Sprite2D" parent="." unique_id=31815041]
 visible = false
 texture = ExtResource("2_nf4vx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1712605118]
 z_index = 1
 position = Vector2(5, 0)
 shape = SubResource("RectangleShape2D_o87d8")
 
-[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="."]
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=1422129860]
 
-[node name="Shooter" parent="." instance=ExtResource("4_wtpgl")]
+[node name="Shooter" parent="." unique_id=1495694835 instance=ExtResource("4_wtpgl")]
 detector_color = Color(0, 0, 1, 0.0980392)
 
-[node name="Gun" parent="Shooter" index="0"]
+[node name="Gun" parent="Shooter" index="0" unique_id=216722360]
 position = Vector2(4, 0)
-sprite_frames = SubResource("SpriteFrames_lyc1n")
-frame_progress = 0.0431887
+sprite_frames = SubResource("SpriteFrames_2wlmh")
+frame_progress = 0.22811371
 offset = Vector2(7, -2)
 
-[node name="MuzzleFlash" parent="Shooter" index="1"]
-sprite_frames = SubResource("SpriteFrames_7qxgd")
-frame_progress = 0.656992
+[node name="MuzzleFlash" parent="Shooter" index="1" unique_id=233061104]
+sprite_frames = SubResource("SpriteFrames_7fpw5")
+frame_progress = 0.841917
 
-[node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_mwix6")
+[node name="CollisionShape2D" parent="Shooter/Detector" parent_id_path=PackedInt32Array(1495694835, 1614718735) index="0" unique_id=1492619427]
+shape = SubResource("CircleShape2D_qjn2g")
 
-[node name="Explosion" parent="." instance=ExtResource("13_iceo6")]
+[node name="Explosion" parent="." unique_id=214036121 instance=ExtResource("13_iceo6")]
 
-[node name="UI" type="Node2D" parent="."]
+[node name="UI" type="Node2D" parent="." unique_id=1328552320]
 z_index = 50
 z_as_relative = false
 
-[node name="EntityHUD" parent="UI" instance=ExtResource("5_owktb")]
+[node name="EntityHUD" parent="UI" unique_id=1404328305 instance=ExtResource("5_owktb")]
 offset_left = -45.0
 offset_top = -134.0
 offset_right = -45.0

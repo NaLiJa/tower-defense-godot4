@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cfmt0lvu6g0mw"]
+[gd_scene format=3 uid="uid://cfmt0lvu6g0mw"]
 
 [ext_resource type="PackedScene" uid="uid://8ja2wvw63xvb" path="res://entities/projectiles/projectile.tscn" id="1_ry2b2"]
 [ext_resource type="Texture2D" uid="uid://b344yuti171ff" path="res://entities/projectiles/assets/textures/bullet/idle_00.png" id="2_5apyx"]
@@ -10,36 +10,44 @@
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_m08r3"]
 frames = 3
-fps = 8.0
 frame_0/texture = ExtResource("2_5apyx")
 frame_1/texture = ExtResource("3_dcw82")
-frame_1/delay_sec = 0.0
+frame_1/duration = 1.0
 frame_2/texture = ExtResource("4_x3yx5")
-frame_2/delay_sec = 0.0
+frame_2/duration = 1.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_txwll"]
 radius = 3.0
 height = 9.99999
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_mb2m8"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ld75q"]
 resource_local_to_scene = true
 animations = [{
-"frames": [ExtResource("5_pycns"), ExtResource("6_k3bh3"), ExtResource("7_vfvte"), null],
-"loop": false,
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_pycns")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_k3bh3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vfvte")
+}],
+"loop": 0,
 "name": &"hit",
 "speed": 12.0
 }]
 
-[node name="Bullet" instance=ExtResource("1_ry2b2")]
+[node name="Bullet" unique_id=1840245588 instance=ExtResource("1_ry2b2")]
 
-[node name="Sprite2D" parent="." index="0"]
+[node name="Sprite2D" parent="." index="0" unique_id=413976319]
 position = Vector2(-27, 0)
 texture = SubResource("AnimatedTexture_m08r3")
 
-[node name="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" parent="." index="1" unique_id=87477981]
 position = Vector2(0, 0)
 shape = SubResource("CapsuleShape2D_txwll")
 
-[node name="HitVfx" parent="." index="3"]
+[node name="HitVfx" parent="." index="3" unique_id=103180657]
 position = Vector2(13, 0)
-frames = SubResource("SpriteFrames_mb2m8")
+sprite_frames = SubResource("SpriteFrames_ld75q")

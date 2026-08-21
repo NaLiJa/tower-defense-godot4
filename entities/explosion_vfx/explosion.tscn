@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://x6ivhnvyfp45"]
+[gd_scene format=3 uid="uid://x6ivhnvyfp45"]
 
 [ext_resource type="Texture2D" uid="uid://dgkk8f8ig3hmi" path="res://entities/explosion_vfx/assets/textures/default/die_fx_00.png" id="1_uvsss"]
 [ext_resource type="Texture2D" uid="uid://c3ev55s14st7w" path="res://entities/explosion_vfx/assets/textures/default/die_fx_01.png" id="2_qvom1"]
@@ -128,7 +128,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("21_mqn8q")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 12.0
 }, {
@@ -136,7 +136,7 @@ animations = [{
 "duration": 1.0,
 "texture": null
 }],
-"loop": true,
+"loop": 1,
 "name": &"hidden",
 "speed": 5.0
 }, {
@@ -261,12 +261,12 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("61_n6nfh")
 }],
-"loop": false,
+"loop": 0,
 "name": &"objective",
 "speed": 12.0
 }]
 
-[node name="Explosion" type="AnimatedSprite2D"]
+[node name="Explosion" type="AnimatedSprite2D" unique_id=116349388]
 sprite_frames = SubResource("SpriteFrames_h1o7w")
 animation = &"hidden"
 autoplay = "hidden"

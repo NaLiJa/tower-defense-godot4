@@ -1,14 +1,14 @@
-[gd_scene load_steps=121 format=3 uid="uid://dx0mfo2yv8887"]
+[gd_scene format=3 uid="uid://dx0mfo2yv8887"]
 
 [ext_resource type="PackedScene" uid="uid://bl2so1n5mvkym" path="res://entities/enemies/shooting/shooting_enemy.tscn" id="1_3xlxq"]
 [ext_resource type="Texture2D" uid="uid://bqno5ak15gnhi" path="res://entities/enemies/shooting/helicopters/assets/textures/body_move_00.png" id="2_iq8hb"]
-[ext_resource type="Script" path="res://entities/enemies/shooting/helicopters/helicopter.gd" id="2_mdput"]
-[ext_resource type="Script" path="res://entities/enemies/shooting/helicopters/states/die.gd" id="3_jegha"]
-[ext_resource type="Script" path="res://entities/enemies/shooting/helicopters/states/move.gd" id="3_scvwg"]
+[ext_resource type="Script" uid="uid://bu10smh7g55u4" path="res://entities/enemies/shooting/helicopters/helicopter.gd" id="2_mdput"]
+[ext_resource type="Script" uid="uid://bqs3k1v1qvqnn" path="res://entities/enemies/shooting/helicopters/states/die.gd" id="3_jegha"]
+[ext_resource type="Script" uid="uid://e7wc14gdmxb5" path="res://entities/enemies/shooting/helicopters/states/move.gd" id="3_scvwg"]
 [ext_resource type="Texture2D" uid="uid://j0wxuunw8xou" path="res://entities/enemies/shooting/helicopters/assets/textures/shadow_die_00.png" id="4_0piph"]
-[ext_resource type="Script" path="res://entities/enemies/shooting/helicopters/states/shoot.gd" id="5_kl3dc"]
+[ext_resource type="Script" uid="uid://dgd1ybxk3peae" path="res://entities/enemies/shooting/helicopters/states/shoot.gd" id="5_kl3dc"]
 [ext_resource type="Texture2D" uid="uid://cwnjbpttej5qs" path="res://entities/enemies/shooting/helicopters/assets/textures/shadow_die_01.png" id="5_urlb3"]
-[ext_resource type="Script" path="res://entities/enemies/shooting/helicopters/states/shoot_still.gd" id="5_we7qf"]
+[ext_resource type="Script" uid="uid://dtg0ochuvw3jw" path="res://entities/enemies/shooting/helicopters/states/shoot_still.gd" id="5_we7qf"]
 [ext_resource type="Texture2D" uid="uid://yu11rbjii2ll" path="res://entities/enemies/shooting/helicopters/assets/textures/shadow_die_02.png" id="6_e1dxg"]
 [ext_resource type="Texture2D" uid="uid://kpvhhmrf3uxx" path="res://entities/enemies/shooting/helicopters/assets/textures/shadow_die_03.png" id="7_70e8n"]
 [ext_resource type="Texture2D" uid="uid://bbagnte4d3b00" path="res://entities/enemies/shooting/helicopters/assets/textures/shadow_die_04.png" id="8_6gmv6"]
@@ -156,7 +156,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("16_tciob")
 }],
-"loop": false,
+"loop": 0,
 "name": &"die",
 "speed": 12.0
 }, {
@@ -179,12 +179,12 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("22_fvc6v")
 }],
-"loop": true,
+"loop": 1,
 "name": &"move",
 "speed": 12.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_q53ch"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ln150"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -257,7 +257,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("32_xrbsv")
 }],
-"loop": false,
+"loop": 0,
 "name": &"die",
 "speed": 12.0
 }, {
@@ -280,7 +280,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("38_wgdw5")
 }],
-"loop": true,
+"loop": 1,
 "name": &"hit",
 "speed": 10.0
 }, {
@@ -303,7 +303,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("38_wgdw5")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 12.0
 }, {
@@ -326,7 +326,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("38_wgdw5")
 }],
-"loop": true,
+"loop": 1,
 "name": &"move",
 "speed": 12.0
 }, {
@@ -349,7 +349,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("44_l1x3m")
 }],
-"loop": false,
+"loop": 0,
 "name": &"shoot_a",
 "speed": 12.0
 }, {
@@ -372,7 +372,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("50_thn5s")
 }],
-"loop": false,
+"loop": 0,
 "name": &"shoot_b",
 "speed": 12.0
 }]
@@ -419,7 +419,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("63_myc7j")
 }],
-"loop": false,
+"loop": 0,
 "name": &"die",
 "speed": 12.0
 }, {
@@ -442,7 +442,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("69_ojh7p")
 }],
-"loop": true,
+"loop": 1,
 "name": &"move",
 "speed": 12.0
 }]
@@ -451,14 +451,14 @@ animations = [{
 radius = 24.0
 height = 192.0
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_iyx81"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ovoix"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": null
 }],
-"loop": false,
+"loop": 0,
 "name": &"explode",
 "speed": 5.0
 }, {
@@ -481,7 +481,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("90_kx5uw")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 12.0
 }, {
@@ -504,7 +504,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("96_5t8qy")
 }],
-"loop": false,
+"loop": 0,
 "name": &"shoot_a",
 "speed": 12.0
 }, {
@@ -527,19 +527,19 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("101_ngg41")
 }],
-"loop": false,
+"loop": 0,
 "name": &"shoot_b",
 "speed": 12.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_8rdfx"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_2b7gq"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": null
 }],
-"loop": false,
+"loop": 0,
 "name": &"explode",
 "speed": 5.0
 }, {
@@ -547,7 +547,7 @@ animations = [{
 "duration": 1.0,
 "texture": null
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -576,7 +576,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("33_1ab4i")
 }],
-"loop": false,
+"loop": 0,
 "name": &"shoot_a",
 "speed": 12.0
 }, {
@@ -605,15 +605,15 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("33_1ab4i")
 }],
-"loop": false,
+"loop": 0,
 "name": &"shoot_b",
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_2d3my"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_ke6gm"]
 radius = 600.0
 
-[node name="Helicopter" instance=ExtResource("1_3xlxq")]
+[node name="Helicopter" unique_id=1399819653 instance=ExtResource("1_3xlxq")]
 z_index = 20
 collision_layer = 64
 collision_mask = 68
@@ -622,49 +622,49 @@ rot_speed = 4.0
 speed = 170
 metadata/_edit_lock_ = true
 
-[node name="Move" parent="StateMachine" index="0"]
+[node name="Move" parent="StateMachine" parent_id_path=PackedInt32Array(1943287911) index="0" unique_id=1152628619]
 script = ExtResource("3_scvwg")
 
-[node name="Die" parent="StateMachine" index="3"]
+[node name="Die" parent="StateMachine" parent_id_path=PackedInt32Array(1943287911) index="3" unique_id=1205344493]
 script = ExtResource("3_jegha")
 
-[node name="Shoot" parent="StateMachine" index="4"]
+[node name="Shoot" parent="StateMachine" parent_id_path=PackedInt32Array(1943287911) index="4" unique_id=1532901551]
 script = ExtResource("5_kl3dc")
 
-[node name="Shoot_Still" parent="StateMachine" index="5"]
+[node name="Shoot_Still" parent="StateMachine" parent_id_path=PackedInt32Array(1943287911) index="5" unique_id=1750293834]
 script = ExtResource("5_we7qf")
 
-[node name="Shadow" type="AnimatedSprite2D" parent="." index="1"]
+[node name="Shadow" type="AnimatedSprite2D" parent="." index="1" unique_id=1995084610]
 position = Vector2(8, 32)
 sprite_frames = SubResource("SpriteFrames_akjy8")
 animation = &"die"
 autoplay = "move"
 
-[node name="Sprite2D" parent="." index="2"]
-sprite_frames = SubResource("SpriteFrames_q53ch")
+[node name="Sprite2D" parent="." index="2" unique_id=1055406294]
+sprite_frames = SubResource("SpriteFrames_ln150")
 animation = &"shoot_b"
 
-[node name="Rotor" type="AnimatedSprite2D" parent="." index="3"]
+[node name="Rotor" type="AnimatedSprite2D" parent="." index="3" unique_id=475558338]
 position = Vector2(3, 0)
 sprite_frames = SubResource("SpriteFrames_rn3o2")
 animation = &"die"
 autoplay = "move"
 
-[node name="CollisionShape2D" parent="." index="4"]
+[node name="CollisionShape2D" parent="." index="4" unique_id=331306561]
 visible = false
 rotation = 4.71239
 shape = SubResource("CapsuleShape2D_q2hii")
 
-[node name="NavigationAgent2D" parent="." index="5"]
+[node name="NavigationAgent2D" parent="." index="5" unique_id=349363648]
 path_desired_distance = 20.0
 target_desired_distance = 5.0
 path_max_distance = 40.0
 navigation_layers = 2
 avoidance_enabled = false
 radius = 96.0
-time_horizon = 20.0
+time_horizon_agents = 20.0
 
-[node name="Shooter" parent="." index="7"]
+[node name="Shooter" parent="." index="7" unique_id=625652198]
 z_index = -5
 detector_color = Color(1, 0.22, 0.25, 0.25)
 detect_radius = 600
@@ -677,28 +677,28 @@ projectile_speed = 400
 projectile_damage = 20
 metadata/_edit_lock_ = true
 
-[node name="Gun" parent="Shooter" index="0"]
+[node name="Gun" parent="Shooter" index="0" unique_id=216722360]
 position = Vector2(-14, 0)
-sprite_frames = SubResource("SpriteFrames_iyx81")
-frame_progress = 0.436135
+sprite_frames = SubResource("SpriteFrames_ovoix")
+frame_progress = 0.17784083
 
-[node name="Muzzle" parent="Shooter/Gun" index="0"]
+[node name="Muzzle" parent="Shooter/Gun" index="0" unique_id=713128148]
 position = Vector2(50, -42)
 
 [node name="Muzzle2" parent="Shooter/Gun" index="1"]
 position = Vector2(50, 38)
 
-[node name="MuzzleFlash" parent="Shooter" index="1"]
-sprite_frames = SubResource("SpriteFrames_8rdfx")
-frame_progress = 0.848354
+[node name="MuzzleFlash" parent="Shooter" index="1" unique_id=233061104]
+sprite_frames = SubResource("SpriteFrames_2b7gq")
+frame_progress = 0.5740327
 
-[node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
-shape = SubResource("CircleShape2D_2d3my")
+[node name="CollisionShape2D" parent="Shooter/Detector" parent_id_path=PackedInt32Array(625652198, 1614718735) index="0" unique_id=1492619427]
+shape = SubResource("CircleShape2D_ke6gm")
 
-[node name="LookAhead" parent="Shooter" index="3"]
+[node name="LookAhead" parent="Shooter" index="3" unique_id=744972255]
 target_position = Vector2(650, 0)
 
-[node name="Explosion" parent="." index="8" instance=ExtResource("111_m6jlu")]
+[node name="Explosion" parent="." index="8" unique_id=272419126 instance=ExtResource("111_m6jlu")]
 
 [connection signal="anim_restarted" from="Shooter" to="." method="_on_shooter_anim_restarted"]
 

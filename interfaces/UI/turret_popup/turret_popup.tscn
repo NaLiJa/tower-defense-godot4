@@ -1,7 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://bjphbghinurfr"]
+[gd_scene format=3 uid="uid://bjphbghinurfr"]
 
 [ext_resource type="Theme" uid="uid://cgfdgl4ihd081" path="res://assets/themes/td_theme.tres" id="1_d4ywp"]
-[ext_resource type="Script" path="res://interfaces/UI/turret_popup/turret_popup.gd" id="2_hlo1n"]
+[ext_resource type="Script" uid="uid://dqb4sqosvfum8" path="res://interfaces/UI/turret_popup/turret_popup.gd" id="2_hlo1n"]
 [ext_resource type="Texture2D" uid="uid://dyoxd2r3d7q3g" path="res://interfaces/UI/turret_popup/assets/textures/turret_gatling_icon.png" id="4_1pplw"]
 [ext_resource type="Texture2D" uid="uid://dst6k2hllrnby" path="res://interfaces/assets/textures/red_circle_cross.png" id="4_x5xtb"]
 [ext_resource type="Texture2D" uid="uid://clvlwewuxqgme" path="res://interfaces/UI/turret_popup/assets/textures/turret_single_icon.png" id="5_hubt0"]
@@ -16,15 +16,18 @@ modulate_color = Color(0.964706, 0.964706, 0.964706, 1)
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_jhmro"]
 
-[node name="TurretPopup" type="CanvasLayer"]
+[node name="TurretPopup" type="CanvasLayer" unique_id=1369527061]
 script = ExtResource("2_hlo1n")
 
-[node name="Background" type="Control" parent="."]
+[node name="Background" type="Control" parent="." unique_id=1321920204]
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="Panel" type="Panel" parent="Background"]
+[node name="Panel" type="Panel" parent="Background" unique_id=222852016]
 modulate = Color(1, 1, 1, 0.843137)
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -40,7 +43,8 @@ size_flags_vertical = 4
 theme = ExtResource("1_d4ywp")
 metadata/_edit_layout_mode = 1
 
-[node name="Close" type="Button" parent="Background/Panel"]
+[node name="Close" type="Button" parent="Background/Panel" unique_id=2129882363]
+layout_mode = 0
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -32.0
@@ -52,14 +56,15 @@ pivot_offset = Vector2(24.5, 24.5)
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_styles/normal = SubResource("StyleBoxTexture_xfjc7")
-theme_override_styles/hover = SubResource("StyleBoxTexture_2ssdq")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_2ssdq")
+theme_override_styles/hover = SubResource("StyleBoxTexture_2ssdq")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_7fftr")
 icon = ExtResource("4_x5xtb")
 icon_alignment = 1
 metadata/_edit_layout_mode = 1
 
-[node name="Turrets" type="HBoxContainer" parent="Background/Panel"]
+[node name="Turrets" type="HBoxContainer" parent="Background/Panel" unique_id=302293616]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -73,24 +78,19 @@ grow_vertical = 2
 theme_override_constants/separation = 10
 metadata/_edit_layout_mode = 1
 
-[node name="Gatling" type="HFlowContainer" parent="Background/Panel/Turrets"]
-offset_top = 1.0
-offset_right = 164.0
-offset_bottom = 201.0
+[node name="Gatling" type="HFlowContainer" parent="Background/Panel/Turrets" unique_id=1646300703]
+layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/v_separation = 10
 
-[node name="Button" type="Button" parent="Background/Panel/Turrets/Gatling"]
-offset_right = 164.0
-offset_bottom = 136.0
+[node name="Button" type="Button" parent="Background/Panel/Turrets/Gatling" unique_id=318725226]
+layout_mode = 2
 button_group = SubResource("ButtonGroup_jhmro")
 icon = ExtResource("4_1pplw")
 icon_alignment = 1
 
-[node name="Label" type="Label" parent="Background/Panel/Turrets/Gatling"]
-offset_top = 146.0
-offset_right = 164.0
-offset_bottom = 200.0
+[node name="Label" type="Label" parent="Background/Panel/Turrets/Gatling" unique_id=807369199]
+layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
@@ -98,25 +98,19 @@ theme_override_font_sizes/font_size = 32
 text = "200"
 horizontal_alignment = 1
 
-[node name="Single" type="HFlowContainer" parent="Background/Panel/Turrets"]
-offset_left = 174.0
-offset_top = 1.0
-offset_right = 338.0
-offset_bottom = 201.0
+[node name="Single" type="HFlowContainer" parent="Background/Panel/Turrets" unique_id=1024947262]
+layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/v_separation = 10
 
-[node name="Button" type="Button" parent="Background/Panel/Turrets/Single"]
-offset_right = 164.0
-offset_bottom = 136.0
+[node name="Button" type="Button" parent="Background/Panel/Turrets/Single" unique_id=1183538561]
+layout_mode = 2
 button_group = SubResource("ButtonGroup_jhmro")
 icon = ExtResource("5_hubt0")
 icon_alignment = 1
 
-[node name="Label" type="Label" parent="Background/Panel/Turrets/Single"]
-offset_top = 146.0
-offset_right = 164.0
-offset_bottom = 200.0
+[node name="Label" type="Label" parent="Background/Panel/Turrets/Single" unique_id=1858453626]
+layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
@@ -124,25 +118,19 @@ theme_override_font_sizes/font_size = 32
 text = "500"
 horizontal_alignment = 1
 
-[node name="Missile" type="HFlowContainer" parent="Background/Panel/Turrets"]
-offset_left = 348.0
-offset_top = 1.0
-offset_right = 512.0
-offset_bottom = 201.0
+[node name="Missile" type="HFlowContainer" parent="Background/Panel/Turrets" unique_id=601374901]
+layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/v_separation = 10
 
-[node name="Button" type="Button" parent="Background/Panel/Turrets/Missile"]
-offset_right = 164.0
-offset_bottom = 136.0
+[node name="Button" type="Button" parent="Background/Panel/Turrets/Missile" unique_id=107091926]
+layout_mode = 2
 button_group = SubResource("ButtonGroup_jhmro")
 icon = ExtResource("6_khrde")
 icon_alignment = 1
 
-[node name="Label" type="Label" parent="Background/Panel/Turrets/Missile"]
-offset_top = 146.0
-offset_right = 164.0
-offset_bottom = 200.0
+[node name="Label" type="Label" parent="Background/Panel/Turrets/Missile" unique_id=1601822730]
+layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
